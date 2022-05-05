@@ -8,6 +8,8 @@ import Game from './components/Game';
 
 const GameList = () => {
   let [apiData, setApiData] = useState([]);
+  let [checkRating, setCheckRating] = useState(false);
+
 
   //fetch defaults to GET requests
   useEffect(() => {
@@ -17,18 +19,29 @@ const GameList = () => {
       setApiData(data);
     })
   }, [])
+
+  const handleClick = () => {
+    setCheckRating(!checkRating);
+  }
   
     return (
   <div className="GameList">
       <p>This is the GameList comp</p>
-      <p>This is the name of the first game</p>
+      <p>To display all the games over 4.5 press the button</p>
+      <button onClick={handleClick}>Press</button>
+      
       <div>
-      {apiData.map((e, index) => {
+      {checkRating === false ?
+      apiData.map((e, i) => {
         return (
-          <Game key={index} name={e.name} img={e.background_image} rating={e.rating} released={e.released} />
+          <Game key={i} name={e.name} img={e.background_image} rating={e.rating} released={e.released} />
         )
-      }
-        )}
+      }) : 
+      apiData.filter((e) => e.rating >= 4.5).map((e, i) => {
+        return (
+          <Game key={i} name={e.name} img={e.background_image} rating={e.rating} released={e.released} />
+        )})
+        }
       </div>
   </div> 
   );
