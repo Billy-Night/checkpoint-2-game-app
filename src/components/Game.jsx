@@ -1,5 +1,8 @@
 import { useNavigate } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
+//I think that I need to use the id in the url with React Router and the useParams Hook in the GameDetails component, couldn't quite get it in time
+//I can retrieve the id of each game from the button click, just need to add it to the URL then retrieve it in the GameDetails component
 
 const Game = (props) => {
 

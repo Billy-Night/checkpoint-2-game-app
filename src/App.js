@@ -19,3 +19,5 @@ function App() {
 }
 
 export default App;
+
+// Using React Router, when you want to create a Route that uses a URL parameter, you do so by including a : in front of the value you pass to Route's path prop.

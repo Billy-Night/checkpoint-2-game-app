@@ -1,5 +1,7 @@
+// import { useParams } from "react-router-dom";
 
 const GameDetails = (props) => {
+    // const { id } = useParams();
 
 //  const oneGameCall = (id) => {
 //     fetch(`https://apis.wilders.dev/wild-games/games/:${id}`)
@@ -10,7 +12,7 @@ const GameDetails = (props) => {
 
     return (
     <div className="game-details">
-        <h1>Hello this is game details</h1>
+        <h2>Hello this is game details component</h2>
 
     </div>
     )
